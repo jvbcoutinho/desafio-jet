@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/[Bb]in/": true,
+    "**/.vs/": true,
+    "**/**.user": true,
+    "**/[Oo]bj": true
+  },
+  "editor.formatOnSave": true,
+  "prettier.configPath": ".vscode/.prettierrc"
+}
