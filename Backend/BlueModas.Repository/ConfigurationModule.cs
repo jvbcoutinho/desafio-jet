@@ -1,5 +1,4 @@
 
-using BlueModas.Domain.Cesta;
 using BlueModas.Domain.Pedido;
 using BlueModas.Domain.Produto;
 using BlueModas.Repository.Context;
@@ -15,11 +14,10 @@ namespace BlueModas.Repository
         {
             services.AddDbContext<ModaContext>(opt =>
             {
-                opt.UseInMemoryDatabase(connectionString);
+                opt.UseInMemoryDatabase("ModaDatabase");
             });
 
             services.AddTransient<IProdutoRepository, ProdutoRepository>();
-            services.AddTransient<ICestaRepository, CestaRepository>();
             services.AddTransient<IPedidoRepository, PedidoRepository>();
         }
     }

@@ -1,4 +1,3 @@
-using BlueModas.Domain.Cesta;
 using BlueModas.Domain.Pedido;
 using BlueModas.Domain.Produto;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +21,6 @@ namespace BlueModas.Repository.Context
             base.OnConfiguring(optionsBuilder);
         }
 
-        public DbSet<Cesta> Cesta { get; set; }
         public DbSet<Pedido> Pedido { get; set; }
         public DbSet<Produto> Produto { get; set; }
 
