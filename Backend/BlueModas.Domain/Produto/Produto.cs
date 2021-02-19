@@ -8,6 +8,8 @@ namespace BlueModas.Domain.Produto
         public string ImagemUrl { get; private set; }
         public decimal Preco { get; private set; }
 
+        private Produto() { }
+
         public Produto(string nome, string imagemUrl, decimal preco)
         {
             Nome = nome;

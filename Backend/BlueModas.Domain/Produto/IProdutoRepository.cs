@@ -1,13 +1,15 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace BlueModas.Domain.Produto
 {
     public interface IProdutoRepository
     {
-        Task Create(Produto produto);
-        Task Update(Produto produto);
-        Task Delete(Produto produto);
-        Task<Produto> GetById(Guid id);
+        Task Criar(Produto produto);
+        Task Atualizar(Produto produto);
+        Task Deletar(Produto produto);
+        Task<Produto> ObterPorId(Guid id);
+        Task<IEnumerable<Produto>> ObterTodos();
     }
 }

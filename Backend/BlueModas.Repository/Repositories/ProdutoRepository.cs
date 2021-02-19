@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BlueModas.Domain.Produto;
@@ -20,27 +21,32 @@ namespace BlueModas.Repository.Repositories
             _configuration = configuration;
         }
 
-        public async Task Create(Produto produto)
+        public async Task Criar(Produto produto)
         {
             await _context.Produto.AddAsync(produto);
             await _context.SaveChangesAsync();
         }
 
-        public async Task Delete(Produto produto)
+        public async Task Deletar(Produto produto)
         {
             _context.Produto.Remove(produto);
             await _context.SaveChangesAsync();
         }
 
-        public async Task<Produto> GetById(Guid id)
+        public async Task<Produto> ObterPorId(Guid id)
         {
             return await this._context.Produto.Where(x => x.Id == id).FirstOrDefaultAsync();
         }
 
-        public async Task Update(Produto produto)
+        public async Task Atualizar(Produto produto)
         {
             _context.Entry(produto).State = EntityState.Modified;
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Produto>> ObterTodos()
+        {
+            return await this._context.Produto.ToListAsync();
         }
     }
 }
