@@ -11,6 +11,7 @@ namespace BlueModas.Domain.Pedido
         public string Telefone { get; private set; }
         public IList<PedidoItem> Itens { get; private set; }
 
+        public Pedido() { }
         public Pedido(string nome, string email, string telefone, IList<PedidoItem> itens)
         {
             Nome = nome;

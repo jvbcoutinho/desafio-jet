@@ -10,6 +10,7 @@ namespace BlueModas.Domain.Pedido
         public decimal ValorUnitario { get; private set; }
         public decimal ValorTotal { get; private set; }
 
+        public PedidoItem() { }
         public PedidoItem(Guid produtoId, string produtoNome, int quantidade, decimal valorUnitario)
         {
             ProdutoId = produtoId;

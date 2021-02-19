@@ -4,4 +4,14 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlueModas.Domain\BlueModas.Domain.csproj" />
+    <ProjectReference Include="..\BlueModas.Repository\BlueModas.Repository.csproj" />
+    <ProjectReference Include="..\BlueModas.Shared\BlueModas.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
