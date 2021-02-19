@@ -4,7 +4,6 @@ namespace BlueModas.Domain.Pedido
 {
     public class PedidoItem : Entity
     {
-        public Guid PedidoId { get; private set; }
         public Guid ProdutoId { get; private set; }
         public string ProdutoNome { get; private set; }
         public int Quantidade { get; private set; }
