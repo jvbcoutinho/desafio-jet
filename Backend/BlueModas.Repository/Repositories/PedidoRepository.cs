@@ -34,7 +34,11 @@ namespace BlueModas.Repository.Repositories
 
         public async Task<Pedido> ObterPorId(Guid id)
         {
-            return await this._context.Pedido.Where(x => x.Id == id).FirstOrDefaultAsync();
+            return await this._context.Pedido
+                .AsNoTracking()
+                .Include(p => p.Itens)
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
         }
 
         public async Task Atualizar(Pedido pedido)

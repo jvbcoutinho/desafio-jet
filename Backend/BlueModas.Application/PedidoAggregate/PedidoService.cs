@@ -18,6 +18,7 @@ namespace BlueModas.Application.PedidoAggregate
 
             _mapper = mapper;
         }
+
         public async Task<PedidoOutputDto> RegistrarPedido(RegistrarPedidoInputDto dto)
         {
             if (dto.Itens.Count() == 0)
@@ -32,6 +33,12 @@ namespace BlueModas.Application.PedidoAggregate
             var result = _mapper.Map<PedidoOutputDto>(pedido);
 
             return result;
+        }
+
+        public async Task<PedidoOutputDto> ObterPorId(Guid id)
+        {
+            var pedido = await _pedidoRepository.ObterPorId(id);
+            return _mapper.Map<PedidoOutputDto>(pedido);
         }
     }
 }
