@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { CestaDeComprasService } from 'src/app/services/cesta-de-compras.service';
+import { PedidoItem } from 'src/app/shared/models/pedido-item';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,9 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() { }
+  $cestaDeCompras: BehaviorSubject<PedidoItem[]>;
+
+  constructor(
+    private cestaDeComprasService: CestaDeComprasService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.$cestaDeCompras = this.cestaDeComprasService.$cestaDeCompras;
   }
 
+  navigateTo(route: string){
+    this.router.navigate([route]);
+  }
 }
