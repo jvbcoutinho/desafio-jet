@@ -1,0 +1,14 @@
+<mat-card class="example-card">
+  <img mat-card-image [src]="produto.imagemUrl" [alt]="produto.nome">
+  <mat-card-content>
+    <p class="mat-title" style="text-align: center;">
+      {{ produto.nome }}
+    </p>
+    <mat-card-title style="text-align: center;">
+      {{ produto.preco | currency : 'BRL'}}
+    </mat-card-title>
+  </mat-card-content>
+  <mat-card-actions style="text-align: center;">
+    <button mat-flat-button color="accent">Adicionar</button>
+  </mat-card-actions>
+</mat-card>
