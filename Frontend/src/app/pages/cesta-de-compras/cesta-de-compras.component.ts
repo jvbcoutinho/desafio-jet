@@ -26,7 +26,7 @@ export class CestaDeComprasComponent implements OnInit {
   }
 
   adicionarUnidades(produtoId: string, quantidade: number){
-      this.cestaDeComprasService.alterarUnidades(produtoId, quantidade);
+    this.cestaDeComprasService.alterarUnidades(produtoId, quantidade);
   }
 
   navigateTo(route: string){
