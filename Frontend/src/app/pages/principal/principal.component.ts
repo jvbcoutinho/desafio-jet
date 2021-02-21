@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProdutoService } from 'src/app/core/http/produto/produto.service';
+import { ProdutoHttpService } from 'src/app/core/http/produto/produto-http.service';
 import { Produto } from 'src/app/shared/models/produto';
 
 @Component({
@@ -12,11 +12,11 @@ export class PrincipalComponent implements OnInit {
   produtos: Produto[];
 
   constructor(
-    private produtoService: ProdutoService,
+    private produtoService: ProdutoHttpService,
   ) { }
 
   ngOnInit(): void {
-    this.produtoService.obterProdutos().subscribe( response => {
+    this.produtoService.obterTodos().subscribe( response => {
       this.produtos = response;
     })
   }

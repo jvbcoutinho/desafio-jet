@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { CestaDeComprasService } from 'src/app/services/cesta-de-compras.service';
 import { PedidoItem } from 'src/app/shared/models/pedido-item';
 
@@ -14,7 +15,8 @@ export class CestaDeComprasComponent implements OnInit {
   displayedColumns: string[] = ['nome', 'valorUnitario', 'quantidade', 'subtotal'];
 
   constructor(
-    private cestaDeComprasService: CestaDeComprasService
+    private cestaDeComprasService: CestaDeComprasService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -25,6 +27,10 @@ export class CestaDeComprasComponent implements OnInit {
 
   adicionarUnidades(produtoId: string, quantidade: number){
       this.cestaDeComprasService.alterarUnidades(produtoId, quantidade);
+  }
+
+  navigateTo(route: string){
+    this.router.navigate([route]);
   }
 
 }

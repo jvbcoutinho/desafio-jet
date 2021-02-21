@@ -1,0 +1,36 @@
+<div class="container">
+  <form [formGroup]="cliente">
+    <div class="row mt-5">
+      <div class="col-12">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Nome</mat-label>
+          <input matInput id="nome" formControlName="nome">
+          <mat-error *ngIf="cliente.get('nome').invalid">Campo obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-7">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Telefone</mat-label>
+          <input matInput type="tel" id="telefone" formControlName="telefone">
+          <mat-error *ngIf="cliente.get('telefone').invalid">Campo obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-5">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" id="email" formControlName="email">
+          <mat-error *ngIf="cliente.get('email').invalid">Endereço de email inválido</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12 p-0 d-flex justify-content-center">
+        <button [disabled]="cliente.invalid" (click)="registrarPedido()" mat-raised-button color="primary">
+          Concluir
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

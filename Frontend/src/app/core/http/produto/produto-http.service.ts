@@ -7,7 +7,7 @@ import { Produto } from 'src/app/shared/models/produto';
 @Injectable({
   providedIn: 'root'
 })
-export class ProdutoService {
+export class ProdutoHttpService {
 
   private server: string;
 
@@ -17,7 +17,7 @@ export class ProdutoService {
     this.server = environment.serverUrl;
   }
 
-  obterProdutos(nome: string = ""){
+  obterTodos(nome: string = ""){
     var url = this.server + '/v1/produto/';
     return this.http.get<Produto[]>(url);
   }

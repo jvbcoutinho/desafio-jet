@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'cesta-de-compras',
     loadChildren: () => import('./pages/cesta-de-compras/cesta-de-compras.module').then((m) => m.CestaDeComprasModule),
+  },
+  {
+    path: 'identificacao',
+    loadChildren: () => import('./pages/identificacao-cliente/identificacao-cliente.module').then((m) => m.IdentificacaoClienteModule),
   }
 ];
 
