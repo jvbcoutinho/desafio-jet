@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { PedidoHttpService } from 'src/app/core/http/produto/pedido-http.service';
 import { CestaDeComprasService } from 'src/app/services/cesta-de-compras.service';
 import { Cliente } from 'src/app/shared/models/cliente';
@@ -18,6 +19,7 @@ export class IdentificacaoClienteComponent implements OnInit {
   constructor(
     private pedidoHttpService: PedidoHttpService,
     private cestaDeComprasService: CestaDeComprasService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -34,13 +36,13 @@ export class IdentificacaoClienteComponent implements OnInit {
 
     var pedido: Pedido = {
       nome: cliente.nome,
-      email: cliente.nome,
+      email: cliente.email,
       telefone: cliente.telefone,
       itens: pedidoItens,
     };
 
-    this.pedidoHttpService.registrarPedido(pedido).subscribe(result => {
-      console.log(result);
+    this.pedidoHttpService.registrarPedido(pedido).subscribe(p => {
+      this.router.navigate(['pedido', p.id]);
     })
   }
 

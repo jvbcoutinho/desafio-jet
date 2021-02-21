@@ -33,4 +33,7 @@ export class CestaDeComprasComponent implements OnInit {
     this.router.navigate([route]);
   }
 
+  obterTotal(){
+    return this.dataSource.data.reduce((acc, p) => acc + (p.quantidade * p.valorUnitario), 0);
+  }
 }

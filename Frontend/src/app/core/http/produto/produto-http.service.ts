@@ -17,7 +17,7 @@ export class ProdutoHttpService {
     this.server = environment.serverUrl;
   }
 
-  obterTodos(nome: string = ""){
+  obterTodos(){
     var url = this.server + '/v1/produto/';
     return this.http.get<Produto[]>(url);
   }

@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'identificacao',
     loadChildren: () => import('./pages/identificacao-cliente/identificacao-cliente.module').then((m) => m.IdentificacaoClienteModule),
+  },
+  {
+    path: 'pedido/:id',
+    loadChildren: () => import('./pages/pedido/pedido.module').then((m) => m.PedidoModule),
   }
 ];
 
