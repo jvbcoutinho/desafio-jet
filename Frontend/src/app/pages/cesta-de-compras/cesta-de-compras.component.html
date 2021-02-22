@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row mr-3">
     <div class="col-12 p-0 d-flex justify-content-center">
-      <table style="text-align: center; margin-top: 50px;" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <table style="margin-top: 50px;" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
         <!-- Produto Column -->
         <ng-container matColumnDef="nome">
           <th mat-header-cell *matHeaderCellDef> Produto </th>
-          <td mat-cell *matCellDef="let p" style="text-align: left;"> {{p.produtoNome}} </td>
-          <td mat-footer-cell *matFooterCellDef style="text-align: left;"><b>Total</b></td>
+          <td mat-cell *matCellDef="let p"> {{p.produtoNome}} </td>
+          <td mat-footer-cell *matFooterCellDef><b>Total</b></td>
         </ng-container>
 
         <!-- Valor Unitario Column -->
