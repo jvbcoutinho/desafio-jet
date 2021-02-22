@@ -25,10 +25,7 @@ export class PedidoHttpService {
   }
 
   obterPorId(id: string){
-    var url = this.server + '/v1/pedido/';
-    return this.http.get<Pedido>(url,
-    {
-      params: new HttpParams().set('id', id)
-    });
+    var url = this.server + '/v1/pedido/' + id;
+    return this.http.get<Pedido>(url);
   }
 }

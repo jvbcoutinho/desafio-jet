@@ -12,10 +12,10 @@ namespace BlueModas.Api.Controllers.Pedido
     [Route("v1/pedido")]
     public class PedidoController : ControllerBase
     {
-        [Route("")]
+        [Route("{id:guid}")]
         [HttpGet]
         public async Task<IActionResult> ObterPorId(
-            [FromQuery] Guid id,
+            Guid id,
             [FromServices] IPedidoService pedidoService
         )
         {
