@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverUrl: 'https://localhost:5001'
+  serverUrl: 'https://jet-desafio-api.azurewebsites.net/'
 };
 
 /*
