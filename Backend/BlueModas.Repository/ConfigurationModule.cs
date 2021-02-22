@@ -14,7 +14,7 @@ namespace BlueModas.Repository
         {
             services.AddDbContext<ModaContext>(opt =>
             {
-                opt.UseInMemoryDatabase("ModaDatabase");
+                opt.UseSqlServer(connectionString);
             });
 
             services.AddTransient<IProdutoRepository, ProdutoRepository>();
