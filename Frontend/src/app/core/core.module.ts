@@ -8,7 +8,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon'
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoadingStatusInterceptor } from './interceptors/loading-status.interceptor';
 
 @NgModule({
@@ -21,8 +20,7 @@ import { LoadingStatusInterceptor } from './interceptors/loading-status.intercep
     MatButtonModule,
     MatIconModule,
     MatBadgeModule,
-    MatSnackBarModule,
-    MatProgressSpinnerModule
+    MatSnackBarModule
   ],
   exports:
   [
