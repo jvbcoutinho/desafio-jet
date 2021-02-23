@@ -42,6 +42,7 @@ export class IdentificacaoClienteComponent implements OnInit {
     };
 
     this.pedidoHttpService.registrarPedido(pedido).subscribe(p => {
+      this.cestaDeComprasService.$cestaDeCompras.next([]);
       this.router.navigate(['pedido', p.id]);
     })
   }
